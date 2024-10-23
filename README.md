@@ -22,7 +22,9 @@ Steps:
 
     2. Create a conda environment from the requirements.txt file 
         - This will ensure you have the minimum requirements to run this repo
-        - If you are unsure on how to do this, please consult this conda cheatsheet ([click here](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf))
+        - If you are unsure of how to do this, please consult this conda cheatsheet 
+[Conda Cheatsheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf))
+
         - Activate the Conda Environment
         - Make sure you correctly select the interpreter path for VSCode
         
@@ -38,20 +40,22 @@ Steps:
         - Note: Required for unit testing
 
     6. Unit Testing
-        - Check if fit approproaitely trains model & weights get updated
+        - Check if fit appropriately trains model & weights get updated
         - Check loss approaches 0 
         - Check predict works as intended
     
     7. Push to GitHub
-        - If you need a referesher, please consult this Git cheatsheet ([click here](https://education.github.com/git-cheat-sheet-education.pdf))
+        - If you need a refresher, please consult this Git cheatsheet 
+        
+([Git Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf))
 
 # Assignment Context
 
 ## Logistic Regression 
 
 To allow for binary classification using logistic regression, we use a sigmoid function to model
-the data. We will define a loss function to keep track of how the model performs. Instead of using Rsquared, like you've done before in workshop 2 & 3, we will be implementing a log loss
-(binary cross-entropy) function. This function will minize the error when the predicted y is 
+the data. We will define a loss function to keep track of how the model performs. Instead of using Rsquared, like you've done before in workshops 2 & 3, we will be implementing a log loss
+(binary cross-entropy) function. This function will minimize the error when the predicted y is 
 close to an expected value of 1 or 0.
 
 Resources to help you get started: 
@@ -67,7 +71,7 @@ Class labels are encoded in the NSCLC column of the dataset. This is what you ar
 * 1 = NSCLC
 * 0 = Small cell
 
-A set of features have been pre-selected for you to use in **main.py**, but feel free 
+A set of features has been pre-selected for you to use in **main.py**, but feel free 
 to use other features. 
     * Gender
     * Penicillin V Potassium 250 MG
@@ -82,7 +86,7 @@ to use other features.
     * HDL Cholesterol
     * Triglycerides
     * etc... 
-A full list of features are provided in utils.py. Note: You do not need to modify anything
+A full list of features is provided in utils.py. Note: You do not need to modify anything
 in utils.py.
 
 
