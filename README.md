@@ -6,7 +6,7 @@ The goal of this project is to write a class that performs logistic regression a
 
 ## Assignment Overview 
 
-In class, we learned how to derive an Ordinary Least Squares (OLS) estimator in a linear regression model, used to identify best fit line **(see workshop 2)**.
+In class, we learned how to derive an Ordinary Least Squares (OLS) estimator in a linear regression model, used to identify the best fitting line **(see workshop 2)**.
 
 For this workshop, we will be implementing a logistic regression model using the same framework. 
 
@@ -23,7 +23,7 @@ Steps:
     2. Create a conda environment from the requirements.txt file 
         - This will ensure you have the minimum requirements to run this repo
         - If you are unsure of how to do this, please consult this conda cheatsheet 
-[Conda Cheatsheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf))
+([Conda Cheatsheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf))
 
         - Activate the Conda Environment
         - Make sure you correctly select the interpreter path for VSCode
