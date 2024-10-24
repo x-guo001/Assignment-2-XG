@@ -73,19 +73,19 @@ Class labels are encoded in the NSCLC column of the dataset. This is what you ar
 
 A set of features has been pre-selected for you to use in **main.py**, but feel free 
 to use other features. 
-    * Gender
-    * Penicillin V Potassium 250 MG
-    * Penicillin V Potassium 500 M
-    * Computed tomography of chest and abdomen
-    * Plain chest X-ray (procedure)', 'Diastolic Blood Pressure
-    * Body Mass Index
-    * Body Weight
-    * Body Height
-    * Systolic Blood Pressure
-    * LDL Cholesterol
-    * HDL Cholesterol
-    * Triglycerides
-    * etc... 
+* Gender
+* Penicillin V Potassium 250 MG
+* Penicillin V Potassium 500 M
+* Computed tomography of chest and abdomen
+* Plain chest X-ray (procedure)', 'Diastolic Blood Pressure
+* Body Mass Index
+* Body Weight
+* Body Height
+* Systolic Blood Pressure
+* LDL Cholesterol
+* HDL Cholesterol
+* Triglycerides
+* etc... 
 A full list of features is provided in utils.py. Note: You do not need to modify anything
 in utils.py.
 
