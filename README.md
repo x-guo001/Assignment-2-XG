@@ -8,7 +8,7 @@ The goal of this project is to write a class that performs logistic regression a
 
 In class, we learned how to derive an Ordinary Least Squares (OLS) estimator in a linear regression model, used to identify the best fitting line **(see workshop 2)**.
 
-For this workshop, we will be implementing a logistic regression model using the same framework. 
+For this assignment, we will be implementing a logistic regression model using the same framework. 
 
 Logistic regression is useful for classification because the function outputs a value between 0 and 1, corresponding to a categorical classification
 
