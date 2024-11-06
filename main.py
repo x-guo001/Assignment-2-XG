@@ -17,11 +17,11 @@ def main():
     
    
 
-    log_model = logreg.LogisticRegression(num_feats=6, max_iter=10, tol=0.01, learning_rate=0.1, batch_size=120)
+    log_model = logreg.LogisticRegression(num_feats=6, max_iter=10, tol=0.01, learning_rate=0.1, batch_size=12)
     log_model.train_model(X_train, y_train, X_val, y_val)
-    #log_model.plot_loss_history()
+    log_model.plot_loss_history()
 
-    print(log_model.loss_history_train)
+    #print(log_model.loss_history_train)
 
     """
     # for testing purposes once you've added your code
