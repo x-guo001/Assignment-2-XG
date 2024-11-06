@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 from regression import (logreg, utils)
 
+
 def test_logreg():
 
 	# Check that your gradient is being calculated correctly
@@ -19,8 +20,9 @@ def test_logreg():
 
 	# you have reasonable losses at the end of training
 	# What is a reasonable loss?
+    
 	
-pass
+	pass
 	
 
 def test_predict():
