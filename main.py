@@ -21,7 +21,7 @@ def main():
     log_model.train_model(X_train, y_train, X_val, y_val)
     log_model.plot_loss_history()
 
-    #print(log_model.loss_history_train)
+
 
     """
     # for testing purposes once you've added your code

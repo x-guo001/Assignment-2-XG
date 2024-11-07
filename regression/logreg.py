@@ -44,6 +44,7 @@ class BaseRegressor():
         # Important!!!! Remember workshop 2 Linear regression and Gradient Descent
         X_train = np.hstack([X_train, np.ones((X_train.shape[0], 1))])
         X_val = np.hstack([X_val, np.ones((X_val.shape[0], 1))])
+
         
         # Defining initial values for while loop
         prev_update_size = 1
@@ -67,12 +68,13 @@ class BaseRegressor():
             update_size_epoch = []
             
             # Iterating through batches (full for loop is one epoch of training)
-            for X_train, y_train in zip(X_batch, y_batch):
+            for X_train_batch, y_train_batch in zip(X_batch, y_batch):
+
                 # Making prediction on batch
-                y_pred = self.make_prediction(X_train)
+                y_pred = self.make_prediction(X_train_batch)
                 
                 # Calculating loss
-                loss_train = self.loss_function(X_train, y_train)
+                loss_train = self.loss_function(X_train_batch, y_train_batch)
                 
                 # Adding current loss to loss history record
                 self.loss_history_train.append(loss_train)
@@ -80,7 +82,7 @@ class BaseRegressor():
                 # Storing previous weights and bias
                 prev_W = self.W
                 # Calculating gradient of loss function with respect to each parameter
-                grad = self.calculate_gradient(X_train, y_train)
+                grad = self.calculate_gradient(X_train_batch, y_train_batch)
                 
                 # Updating parameters
                 new_W = prev_W - self.lr * grad 
@@ -136,6 +138,8 @@ class LogisticRegression(BaseRegressor):
         # This is this class will be able to use train_model and plot_loss_history! :) 
         super().__init__(num_feats, learning_rate, tol, max_iter, batch_size)
         
+        self.gradient_history = []
+
     def calculate_gradient(self, X, y) -> np.ndarray:
         """
         TODO: Write function to calculate gradient of the
@@ -151,10 +155,15 @@ class LogisticRegression(BaseRegressor):
             gradients for a given loss function type np.ndarray (n-dimensional array)
         """
         
+        # make prediction based on current weight
         y_pred = self.make_prediction(X)
+        # calculate the error between predicted and truth value
         error = y_pred - y
+        # calculate logistic regression gradient
         gradient = np.dot(X.T, error) / (X.shape[0])
-       
+
+        # append gradient to history
+        self.gradient_history.append(gradient)
         return gradient
 
         
@@ -173,7 +182,9 @@ class LogisticRegression(BaseRegressor):
         Returns: 
             average loss 
         """
+        # get prediction based on the input features from X
         y_pred = self.make_prediction(X)
+        # calculate binary cross-entropy loss. Add minimum value 1e-8 to prevent log0 errors
         loss = -np.mean(y * np.log(y_pred + 1e-8) + (1 - y) * np.log(1 - y_pred + 1e-8))
         return loss
         
@@ -191,13 +202,10 @@ class LogisticRegression(BaseRegressor):
         Returns: 
             y_pred for given X
         """
-       
-
-
-        z = np.dot (X, self.W)
-        y_pred = (1 + np.exp(-z)) ** -1
-        # if y_pred < 0.5, then y_pred = 0
-        # if y_pred >=0.5, then y_pred = 1
+        # combine the matrix of input features X and weights
+        z = np.dot(X, self.W)
+        # using sigmoid function to map the values between 0 and 1
+        y_pred = 1 / (1 + np.exp(-z))
         
 
 
